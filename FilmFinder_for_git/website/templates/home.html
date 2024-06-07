@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{%block title %}
+Your films
+{%endblock%}
+
+{% block content%}
+<div class="container mt-5">
+    <h1 align ="center">Top 100 best films of all times</h1> 
+    {% if films|length >0%}
+    {% for element in films %}
+    <div class="alert alert-info">
+        <h2> {{ element[0] }}</h2>
+        <p> {{element[1]}}</p>
+        <p> {{element[2]}}</p>
+        <p><b> </b></p>
+        <a href ='/finder/{{element[3]}}'class="btn btn-warning"> More </a>
+        
+    </div>
+    {% endfor %}
+    {% else %}
+    <p> No films found</p>
+    {%endif%}
+</div>
+{%endblock%}

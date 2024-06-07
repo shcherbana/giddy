@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{%block title %}
+{{film[0]}}
+{%endblock%}
+
+{% block content%}
+<div class="container mt-5">
+    <h1 align ="center">{{film.title}}</h1> 
+    <p>{{film.rank}}</p><br>
+    <div class="alert alert-info">
+        <p>This film was directed by: {{film.directors}}</p><br>
+        <p>Authors: {{film.authors}}</p><br>
+        <p>Production company: {{film.production_company}}</p><br>
+        <p>Cast: {{film.actors}}</p><br>
+        <p>Original release date: {{film.release_date}}</p><br>
+        <p>Genres: {{film.genres}}</p><br>
+        <p>Runtime: {{film.runtime}}</p><br>
+        <p>Content Rating: {{film.content_rating}}</p><br>
+        <p>Short info:</p><br>
+        <p>{{film.info}}</p><br>
+        <p>Critics consensus:</p><br>
+        <p>{{film.critics_consensus}}</p><br>
+    </div>
+    <form method="POST">
+            <button type = 'submit' class="btn btn-danger">Delete from my list</button>
+    </form>
+</div>
+{%endblock%}

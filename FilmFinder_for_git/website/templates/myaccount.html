@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{%block title %}
+Your films
+{%endblock%}
+
+{% block content%}
+<div class="container mt-5">
+    <h1 align ="center">Your Films</h1> 
+    {% if user.films|length >0%}
+    {% for element in user.films %}
+    <div class="alert alert-info">
+        <h2> {{ element.title }}</h2>
+        <p> {{element.rank}}</p>
+        <p><b> </b></p>
+        <a href ='/myaccount/{{element.id}}'class="btn btn-warning"> More </a>
+        
+    </div>
+    {% endfor %}
+    {% else %}
+    <p> No films found</p>
+    {%endif%}
+</div>
+{%endblock%}

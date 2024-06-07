@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{%block title %}
+{{film[0]}}
+{%endblock%}
+
+{% block content%}
+<div class="container mt-5">
+    <h1 align ="center">{{film[1]}}</h1> 
+    <p>{{film[6]}}</p><br>
+    <div class="alert alert-info">
+        <p>This film was directed by: {{film[4]}}</p><br>
+        <p>Authors: {{film[11]}}</p><br>
+        <p>Production company: {{film[12]}}</p><br>
+        <p>Cast: {{film[3]}}</p><br>
+        <p>Original release date: {{film[5]}}</p><br>
+        <p>Genres: {{film[2]}}</p><br>
+        <p>Runtime: {{film[7]}}</p><br>
+        <p>Content Rating {{film[10]}}</p><br>
+        <p>Short info:</p><br>
+        <p>{{film[8]}}</p><br>
+        <p>Critics consesus:</p><br>
+        <p>{{film[9]}}</p><br>
+    </div>
+    <form method="POST">
+            <button type = 'submit' class = 'btn btn-primary'> Add To My List</button>
+    </form>
+</div>
+{%endblock%}
